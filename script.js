@@ -1,10 +1,10 @@
 // ========== STUDENT DATA ==========
 const students = [
-  { id: "101", name: "Aarav" },
-  { id: "102", name: "Riya" },
-  { id: "103", name: "Kabir" },
-  { id: "104", name: "Ananya" },
-  { id: "105", name: "Vivaan" },
+  { id: "101", name: "Anum" },
+  { id: "102", name: "mairah" },
+  { id: "103", name: "zeba" },
+  { id: "104", name: "faria" },
+
 ];
 
 // ========== ATTENDANCE RECORDS ==========

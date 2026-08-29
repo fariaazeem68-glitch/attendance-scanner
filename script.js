@@ -1,9 +1,9 @@
 // ========== STUDENT DATA ==========
 const students = [
-  { id: "101", name: "Anum" },
-  { id: "102", name: "mairah" },
-  { id: "103", name: "zeba" },
-  { id: "104", name: "faria" },
+  { id: "8", name: "Anum" },
+  { id: "17", name: "mairah" },
+  { id: "30", name: "zeba" },
+  { id: "13", name: "faria" },
 
 ];
 

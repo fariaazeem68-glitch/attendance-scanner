@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Attendance Scanner</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Teachable Machine + TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+
+  <nav>
+    <h1>Digital Attendance Scanner</h1>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#scanner">Scanner</a>
+      <a href="#dashboard">Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="section">
+    <h2>Digital Attendance Scanner</h2>
+    <p class="problem">
+      Manual attendance wastes time and is prone to errors. 
+      This system marks attendance instantly using Face Recognition or Student ID.
+    </p>
+    <button class="cta" onclick="document.getElementById('scanner').scrollIntoView()">Scan Attendance</button>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="section">
+    <h2>How It Works</h2>
+    <ol class="steps">
+      <li>Student looks at the camera or enters ID</li>
+      <li>System identifies the student</li>
+      <li>Attendance is recorded with time</li>
+      <li>Teacher can view the live dashboard</li>
+    </ol>
+  </section>
+
+  <!-- Scanner -->
+  <section id="scanner" class="section">
+    <h2>Attendance Scanner</h2>
+
+    <!-- ID Method -->
+    <div class="scanner-box">
+      <h3>Method 1: Student ID</h3>
+      <input type="text" id="studentId" placeholder="Enter Roll No (e.g. 101)">
+      <button onclick="markAttendance()">Mark Present</button>
+      <p class="demo-note">Sample IDs: 101 (Aarav), 102 (Riya), 103 (Kabir), 104 (Ananya), 105 (Vivaan)</p>
+    </div>
+
+    <!-- Face Recognition -->
+    <div class="scanner-box" style="margin-top: 2rem;">
+      <h3>Method 2: Face Recognition</h3>
+      <button id="startCamera" onclick="startFaceRecognition()">Start Camera</button>
+      <button id="stopCamera" onclick="stopCamera()" style="display:none; background:#ef4444;">Stop Camera</button>
+      
+      <div id="webcam-container" style="margin: 1rem 0;"></div>
+      <div id="label-container" style="font-size: 1.1rem; margin: 1rem 0;"></div>
+      
+      <button id="markFromFace" onclick="markFromFace()" style="display:none; background:#22c55e;">
+        Mark Present (from Face)
+      </button>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="section">
+    <h2>Attendance Dashboard</h2>
+    <div class="controls">
+      <button onclick="filterStatus('all')">All</button>
+      <button onclick="filterStatus('Present')">Present</button>
+      <button onclick="filterStatus('Absent')">Absent</button>
+      <button onclick="clearRecords()" class="danger">Clear Today</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Roll No.</th>
+          <th>Status</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

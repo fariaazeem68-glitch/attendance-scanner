@@ -78,7 +78,7 @@ function clearRecords() {
 
 // ========== TEACHABLE MACHINE ==========
 // ⚠️ REPLACE THIS URL with your own Teachable Machine model URL
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/YOUR_MODEL_ID/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/1dCDn7Hhp/";
 
 let model, webcam, maxPredictions;
 let currentPrediction = null;

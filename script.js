@@ -132,7 +132,7 @@ async function predict() {
   if (best.probability > 0.75) {
     labelContainer.innerHTML = `
       <strong style="color:#22c55e">Detected: ${best.className}</strong><br>
-      Confidence: ${(best.probability * 100).toFixed(1)}%
+     
     `;
   } else {
     labelContainer.innerHTML = `<span style="color:#aaa">Looking for face...</span>`;
